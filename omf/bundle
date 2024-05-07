@@ -1,0 +1,4 @@
+package https://github.com/catppuccin/fish
+package pj
+theme default
+theme https://github.com/scottzach1/dracula-theme-omf.git
