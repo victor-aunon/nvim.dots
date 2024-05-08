@@ -28,6 +28,8 @@ Launch default zellij session with `zellij -l default`
 My preferred font is [UbuntuMono](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/UbuntuMono.zip) 
 Dracula colorscheme for Wezterm https://draculatheme.com/wezterm
 
+## 6- Copy the contents from each folder in this repository to `/home/<your-user>/.config`
+
 --- 
 ## Useful links
 - [Gentleman Programming repo](https://github.com/Gentleman-Programming/Gentleman.Dots)
