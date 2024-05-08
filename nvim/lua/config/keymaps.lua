@@ -62,15 +62,23 @@ vim.keymap.set("n", "<C-M-l>", function()
 end)
 
 -- Disable key mappings in insert mode
-vim.api.nvim_set_keymap("i", "<A-j>", "<Nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<A-k>", "<Nop>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<A-j>", "<Nop>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<A-k>", "<Nop>", { noremap = true, silent = true })
 
 -- Disable key mappings in normal mode
-vim.api.nvim_set_keymap("n", "<A-j>", "<Nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-k>", "<Nop>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<A-j>", "<Nop>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<A-k>", "<Nop>", { noremap = true, silent = true })
 
 -- Disable key mappings in visual block mode
-vim.api.nvim_set_keymap("x", "<A-j>", "<Nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("x", "<A-k>", "<Nop>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("x", "<A-j>", "<Nop>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("x", "<A-k>", "<Nop>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("x", "J", "<Nop>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("x", "K", "<Nop>", { noremap = true, silent = true })
+
+-- Move Lines
+vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
+vim.keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
+vim.keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+vim.keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+vim.keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
+vim.keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
