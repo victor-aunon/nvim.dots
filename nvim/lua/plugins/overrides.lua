@@ -16,7 +16,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "dracula",
     },
   },
 
@@ -28,7 +28,7 @@ return {
   },
 
   -- disable trouble
-  { "folke/trouble.nvim", enabled = false },
+  { "folke/trouble.nvim",      enabled = false },
 
   -- add symbols-outline
   {
@@ -148,7 +148,7 @@ return {
     event = "VeryLazy",
     opts = function()
       return {
-        theme = "auto",
+        theme = "dracula",
       }
     end,
   },
