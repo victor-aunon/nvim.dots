@@ -24,12 +24,17 @@ brew install zellij
 
 Launch default zellij session with `zellij -l default`
 
-## 5- Install wezterm and a nerdfont if using Windows and WSL
+## 5- Install nvim through brew!!
+```
+brew install nvim
+```
+
+## 6- Install wezterm and a nerdfont if using Windows and WSL
 
 My preferred font is [UbuntuMono](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/UbuntuMono.zip) 
 Dracula colorscheme for Wezterm https://draculatheme.com/wezterm
 
-## 6- Copy the contents from each folder in this repository to `/home/<your-user>/.config`
+## 7- Copy the contents from each folder in this repository to `/home/<your-user>/.config`
 ---
 
 ## Commands
