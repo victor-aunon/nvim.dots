@@ -28,6 +28,7 @@ oil.setup()
 -----  OIL -----
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
+-- Buffers
 -- Delete all buffers but the current one --
 vim.keymap.set(
   "n",
@@ -35,6 +36,11 @@ vim.keymap.set(
   '<Esc>:%bdelete|edit #|normal`"<Return>',
   { desc = "Delete other buffers but the current one" }
 )
+vim.keymap.set("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
+vim.keymap.set("n", "<leader>bN", "<cmd>bprevious<cr>", { desc = "Prev Buffer (shift + h)" })
+vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+vim.keymap.set("n", "<leader>bn", "<cmd>bprevious<cr>", { desc = "Next Buffer (shift + l)" })
+
 
 ----- HARPOON 2 -----
 vim.keymap.set("n", "<leader>a", function()
