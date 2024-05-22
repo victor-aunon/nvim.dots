@@ -44,3 +44,5 @@ require("lazy").setup({
     },
   },
 })
+
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/lua/config/custom-snippets" } })

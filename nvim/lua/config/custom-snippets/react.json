@@ -1,0 +1,10 @@
+{
+  "useTranslation {t}": {
+    "prefix": "tuset",
+    "body": ["const { t } = useTranslation()"]
+  },
+  "useTranslation {t, i18n}": {
+    "prefix": "tiuset",
+    "body": ["const { t, i18n } = useTranslation()"]
+  }
+}
