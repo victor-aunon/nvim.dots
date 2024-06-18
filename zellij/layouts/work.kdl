@@ -42,9 +42,9 @@ layout {
                tab_active_fullscreen    "#[fg=#51ff74,bold,italic] {name} {fullscreen_indicator}"
                tab_active_sync          "#[fg=#51ff74,bold,italic] {name} {sync_indicator}"
                tab_separator            "#[fg=#ffb86c] > "
-               tab_sync_indicator       "#[fg=#ffb86c] <> "
-               tab_fullscreen_indicator "#[fg=#ffb86c] [] "
-               tab_floating_indicator   "#[fg=#ffb86c] ⬚  "
+               tab_sync_indicator       "<> "
+               tab_fullscreen_indicator "[] "
+               tab_floating_indicator   "⬚  "
 
                command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
                command_git_branch_format      "#[fg=green] {stdout} "
