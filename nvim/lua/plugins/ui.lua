@@ -90,7 +90,7 @@ return {
     "akinsho/bufferline.nvim",
     event = "VeryLazy",
     keys = {
-      { "<Tab>",   "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
+      { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
       { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
     },
     opts = {
@@ -113,8 +113,8 @@ return {
         theme = "dracula",
       },
       sections = {
-        lualine_z = { "buffers" }
-      }
+        lualine_z = { "buffers" },
+      },
     },
   },
 
@@ -158,5 +158,15 @@ return {
   {
     "nvimdev/dashboard-nvim",
     event = "VimEnter",
+  },
+  {
+    "amitds1997/remote-nvim.nvim",
+    version = "*", -- Pin to GitHub releases
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- For standard functions
+      "MunifTanjim/nui.nvim", -- To build the plugin UI
+      "nvim-telescope/telescope.nvim", -- For picking b/w different remote methods
+    },
+    config = true,
   },
 }

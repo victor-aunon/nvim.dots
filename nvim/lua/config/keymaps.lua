@@ -5,6 +5,16 @@
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
+-- Better search navigation (center view after search)
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+-- Configuration reload
+vim.keymap.set("n", "<leader>sr", "<cmd>source $MYVIMRC<CR>", { desc = "Reload config" })
+
+-- Clear search highlighting
+vim.keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "Clear search highlights" })
+
 -- Map Ctrl+b in insert mode to delete to the end of the word without leaving insert mode
 vim.keymap.set("i", "<C-b>", "<C-o>de")
 
@@ -23,6 +33,7 @@ local harpoon = require("harpoon")
 local oil = require("oil")
 harpoon:setup()
 oil.setup()
+
 -- REQUIRED
 
 -----  OIL -----
@@ -41,30 +52,13 @@ vim.keymap.set("n", "<leader>bN", "<cmd>bprevious<cr>", { desc = "Prev Buffer (s
 vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 vim.keymap.set("n", "<leader>bn", "<cmd>bprevious<cr>", { desc = "Next Buffer (shift + l)" })
 
-
 ----- HARPOON 2 -----
-vim.keymap.set("n", "<leader>a", function()
-  harpoon:list():append()
-end, { desc = "Add harpoon mark" })
+vim.keymap.set("n", "<leader>h", function()
+  harpoon:list():add()
+end, { desc = "⚓ Add harpoon mark <C-e> for menu" })
 
 vim.keymap.set("n", "<C-e>", function()
   harpoon.ui:toggle_quick_menu(harpoon:list())
-end)
-
-vim.keymap.set("n", "<C-M-h>", function()
-  harpoon:list():select(1)
-end)
-
-vim.keymap.set("n", "<C-M-j>", function()
-  harpoon:list():select(2)
-end)
-
-vim.keymap.set("n", "<C-M-k>", function()
-  harpoon:list():select(3)
-end)
-
-vim.keymap.set("n", "<C-M-l>", function()
-  harpoon:list():select(4)
 end)
 
 -- Disable key mappings in insert mode
@@ -88,3 +82,5 @@ vim.keymap.set("i", "<A-,>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
 vim.keymap.set("i", "<A-.>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
 vim.keymap.set("v", "<A-,>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 vim.keymap.set("v", "<A-.>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
+
+vim.keymap.set("n", "<leader>a", "<leader>a", { desc = "✨ AI companion" })
