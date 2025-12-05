@@ -1,0 +1,81 @@
+return {}
+-- return {
+--   "olimorris/codecompanion.nvim",
+--   dependencies = {
+--     "nvim-lua/plenary.nvim",
+--     "nvim-treesitter/nvim-treesitter",
+--   },
+--   opts = {
+--     strategies = {
+--       -- Cambiar el adaptador de chat predeterminado
+--       chat = {
+--         adapter = "qwen",
+--       },
+--       inline = {
+--         adapter = "qwen",
+--       },
+--     },
+--     adapters = {
+--       qwen = function()
+--         return require("codecompanion.adapters").extend("ollama", {
+--           name = "qwen", -- Dar a este adaptador un nombre diferente para diferenciarlo del adaptador ollama predeterminado
+--           schema = {
+--             model = {
+--               default = "deepseek-coder-v2:16b",
+--             },
+--           },
+--         })
+--       end,
+--     },
+--     opts = {
+--       log_level = "DEBUG",
+--     },
+--     display = {
+--       diff = {
+--         enabled = true,
+--         close_chat_at = 240, -- Cerrar un búfer de chat abierto si el total de columnas de tu pantalla es menor que...
+--         layout = "vertical", -- división vertical|horizontal para el proveedor predeterminado
+--         opts = { "internal", "filler", "closeoff", "algorithm:patience", "followwrap", "linematch:120" },
+--         provider = "default", -- default|mini_diff
+--       },
+--     },
+--   },
+--   keys = {
+--     {
+--       "<leader>aa",
+--       "<cmd>CodeCompanionChat<cr>",
+--       desc = "Toggle Chat",
+--       mode = { "n", "v" },
+--     },
+--     {
+--       "<leader>ae",
+--       "<cmd>CodeCompanion /explain<cr>",
+--       desc = "Explain visual selected",
+--       mode = { "n", "v" },
+--     },
+--     {
+--       "<leader>af",
+--       "<cmd>CodeCompanion /fix<cr>",
+--       desc = "Fix visual selected",
+--       mode = { "n", "v" },
+--     },
+--     {
+--       "<leader>af",
+--       "<cmd>CodeCompanion /commit<cr>",
+--       desc = "Create a commit message",
+--       mode = { "n", "v" },
+--     },
+--     {
+--       "<leader>ad",
+--       "<cmd>CodeCompanion /lsp<cr>",
+--       desc = "Explain de diagnosis of the selected code",
+--       mode = { "n", "v" },
+--     },
+--     {
+--       "<leader>ao",
+--       "<cmd>CodeCompanionActions<cr>",
+--       desc = "Options",
+--       mode = { "n", "v" },
+--     },
+--   },
+-- }

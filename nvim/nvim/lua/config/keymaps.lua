@@ -1,0 +1,93 @@
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua Add any additional keymaps here
+
+-- Position cursor at the middle of the screen after scrolling half page
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Better search navigation (center view after search)
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+-- Configuration reload
+vim.keymap.set("n", "<leader>sr", "<cmd>source $MYVIMRC<CR>", { desc = "Reload config" })
+
+-- Clear search highlighting
+vim.keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "Clear search highlights" })
+
+-- Map Ctrl+b in insert mode to delete to the end of the word without leaving insert mode
+vim.keymap.set("i", "<C-b>", "<C-o>de")
+
+----- Tmux Navigation ------
+local nvim_tmux_nav = require("nvim-tmux-navigation")
+
+vim.keymap.set("n", "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
+vim.keymap.set("n", "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
+vim.keymap.set("n", "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
+vim.keymap.set("n", "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
+vim.keymap.set("n", "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
+vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
+
+-- REQUIRED
+local harpoon = require("harpoon")
+local oil = require("oil")
+harpoon:setup()
+oil.setup()
+
+-- REQUIRED
+
+-----  OIL -----
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- Buffers
+-- Delete all buffers but the current one --
+vim.keymap.set(
+  "n",
+  "<leader>bq",
+  '<Esc>:%bdelete|edit #|normal`"<Return>',
+  { desc = "Delete other buffers but the current one" }
+)
+vim.keymap.set("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
+vim.keymap.set("n", "<leader>bN", "<cmd>bprevious<cr>", { desc = "Prev Buffer (shift + h)" })
+vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+vim.keymap.set("n", "<leader>bn", "<cmd>bprevious<cr>", { desc = "Next Buffer (shift + l)" })
+
+----- HARPOON 2 -----
+vim.keymap.set("n", "<leader>h", function()
+  harpoon:list():add()
+end, { desc = "⚓ Add harpoon mark <C-e> for menu" })
+
+vim.keymap.set("n", "<C-e>", function()
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
+
+-- Disable key mappings in insert mode
+-- vim.api.nvim_set_keymap("i", "<A-j>", "<Nop>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<A-k>", "<Nop>", { noremap = true, silent = true })
+
+-- Disable key mappings in normal mode
+-- vim.api.nvim_set_keymap("n", "<A-j>", "<Nop>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<A-k>", "<Nop>", { noremap = true, silent = true })
+
+-- Disable key mappings in visual block mode
+-- vim.api.nvim_set_keymap("x", "<A-j>", "<Nop>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("x", "<A-k>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("x", "J", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("x", "K", "<Nop>", { noremap = true, silent = true })
+
+-- Move Lines
+vim.keymap.set("n", "<A-,>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
+vim.keymap.set("n", "<A-.>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
+vim.keymap.set("i", "<A-,>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+vim.keymap.set("i", "<A-.>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+vim.keymap.set("v", "<A-,>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
+vim.keymap.set("v", "<A-.>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
+
+vim.keymap.set("n", "<leader>a", "<leader>a", { desc = "✨ AI companion" })
+
+-- Atajo para activar/desactivar Copilot fácilmente
+vim.keymap.set("n", "<leader>ct", ":Copilot toggle<CR>", { desc = "Copilot - Toggle" })
+
+-- Move cursor to left or right in insert mode
+vim.keymap.set("i", "<C-l>", "<C-o>l", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-h>", "<C-o>h", { noremap = true, silent = true })
