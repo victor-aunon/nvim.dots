@@ -1,0 +1,81 @@
+#[ 1. EL ESQUELETO (Aquí decidimos el orden exacto)
+# Lo dejamos todo en una sola línea limpia
+format = """
+$username\
+$directory\
+$git_branch\
+$git_status\
+$cmd_duration\
+$character"""
+
+# Mandamos el reloj a la derecha del todo de la pantalla
+right_format = """$time"""
+
+# Use the color palette
+palette = "dracula"
+
+# Define Dracula color palette
+[palettes.dracula]
+background = "#282a36"
+current_line = "#44475a"
+foreground = "#f8f8f2"
+comment = "#6272a4"
+cyan = "#8be9fd"
+green = "#50fa7b"
+orange = "#ffb86c"
+pink = "#ff79c6"
+purple = "#bd93f9"
+red = "#ff5555"
+yellow = "#f1fa8c"
+
+# 2. LOS MÓDULOS
+
+[character]
+# El cursor: Verde si el comando anterior fue bien, Rojo si dio error
+success_symbol = "[❯](bold fg:#50fa7b)"
+error_symbol = "[ｘ](bold fg:#ff5555)"
+
+[time]
+disabled = false
+time_format = "%F - %T"
+style = "bold fg:#bd93f9" # Púrpura Drácula
+format = ' 🕙 [$time]($style)'
+
+[username]
+show_always = true
+style_user = "bold fg:#50fa7b" # Verde Drácula
+format = '🐱 [$user]($style) in '
+
+[directory]
+style = "bold fg:#8be9fd" # Cyan
+format = "[$path]($style) "
+truncation_length = 3
+truncate_to_repo = false
+
+[git_branch]
+symbol = "🌱 "
+style = "bold fg:#ff79c6" # Rosa Drácula
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+style = "bold fg:#ff5555" # Rojo Drácula para cambios sin commitear
+format = '([$all_status$ahead_behind]($style) )'
+
+[nodejs]
+symbol = "⬢ "
+style = "bold fg:#50fa7b" # Verde Drácula
+format = 'via [$symbol($version )]($style)'
+
+[cmd_duration]
+min_time = 2000 # Solo se muestra si el comando tarda más de 2 segundos
+format = ' took [$duration]($style)'
+style = "bold fg:#ffb86c" # Naranja Drácula
+
+[aws]
+symbol = "☁️  "
+style = "bold fg:#ffb86c"
+
+[kubernetes]
+disabled = false
+
+
